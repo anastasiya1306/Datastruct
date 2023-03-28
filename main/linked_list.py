@@ -46,9 +46,55 @@ class LinkedList:
         ll_string += ' None'
         print(ll_string)
 
+    def to_list(self):
+        """Возвращает список с данными, содержащимися в односвязном списке LinkedList"""
+        list_data = []
+        current = self.head
+        while current:
+            list_data.append(current.data)
+            current = current.next_node
+        return list_data
+
+
+    def get_data_by_id(self, id):
+        """Возвращает первый найденный в LinkedList словарь с ключом id,
+           значение которого равно переданному в метод значению"""
+        current = self.head
+        while current is not None:
+            try:
+                if current.data['id'] == id:
+                    return current.data
+                    break
+            except Exception:
+                print('Данные не являются словарем или в словаре нет id')
+            current = current.next_node
+
+# ll = LinkedList()
+# ll.insert_beginning({'id': 1})
+# ll.insert_at_end({'id': 2})
+# ll.insert_at_end({'id': 3})
+# ll.insert_beginning({'id': 0})
+# ll.print_ll()
+
 ll = LinkedList()
-ll.insert_beginning({'id': 1})
-ll.insert_at_end({'id': 2})
-ll.insert_at_end({'id': 3})
-ll.insert_beginning({'id': 0})
-ll.print_ll()
+
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+ll.insert_beginning({'id': 0, 'username': 'serebro'})
+
+lst = ll.to_list()
+for item in lst: print(item)
+
+user_data = ll.get_data_by_id(3)
+print(user_data)
+
+ll = LinkedList()
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end('idusername')
+ll.insert_at_end([1, 2, 3])
+ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+
+user_data = ll.get_data_by_id(2)
+print(user_data)
+
