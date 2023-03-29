@@ -58,7 +58,7 @@ class LinkedList:
 
     def get_data_by_id(self, id):
         """Возвращает первый найденный в LinkedList словарь с ключом id,
-           значение которого равно переданному в метод значению"""
+           значение которого равно переданному в метод значению."""
         current = self.head
         while current is not None:
             try:
