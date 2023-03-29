@@ -65,7 +65,7 @@ class LinkedList:
                 if current.data['id'] == id:
                     return current.data
                     break
-            except Exception:
+            except TypeError:
                 print('Данные не являются словарем или в словаре нет id')
             current = current.next_node
 
