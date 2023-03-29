@@ -16,7 +16,6 @@ class Stack:
         new_node.next_node = self.top
         self.top = new_node
 
-
     def pop(self):
         """удаляет из стека верхний элемент и возвращает данные удаленного экземпляра класса Node"""
         remove = self.top
@@ -24,6 +23,7 @@ class Stack:
             return None
         self.top = self.top.next_node
         return remove.data
+
 
 if __name__ == '__main__':
     # n1 = Node(5, None)
@@ -42,19 +42,18 @@ if __name__ == '__main__':
     # print(stack.top.next_node.next_node.data)
     # print(stack.top.next_node.next_node.next_node)
     # print(stack.top.next_node.next_node.next_node.data)
-    stack = Stack()
-    stack.push('data1')
-    data = stack.pop()
-
-    # стэк стал пустой
-    print(stack.top)
-    print(data)
+    # stack = Stack()
+    # stack.push('data1')
+    # data = stack.pop()
+    #
+    # # стэк стал пустой
+    # print(stack.top)
+    # print(data)
     stack = Stack()
     stack.push('data1')
     stack.push('data2')
     data = stack.pop()
 
-    # теперь последний элемента содержит данные data1
-    print(stack.top.data)
-
-    print(data)
+    # print(stack.top.data)
+    #
+    # print(data)
